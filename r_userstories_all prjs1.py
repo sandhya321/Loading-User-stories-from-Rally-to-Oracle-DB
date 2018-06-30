@@ -1,9 +1,5 @@
 
 # coding: utf-8
-
-# In[1]:
-
-
 #!/usr/bin/python
 import sys, os
 from pyral import Rally, rallyWorkset, RallyRESTAPIError
