@@ -43,7 +43,9 @@ def user_stories(prj_name):
     rally.enableLogging("rally.history.showstories")
     response = rally.get('HierarchicalRequirement')
     lastdatarefresh= str(time.strftime("%b %d %Y %H:%M:%S"))
-    a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,a17,a18,a19,a20,a21,a22,a23,a24,a25,a26,a27,a28,a29,a30,a31,a32,a33,a34,a35,a36,a37,a38,a39,a40,a41,a42,a43,a44,a45,a46,a47,a48,a49,a50,a51,a52,a53,a54,a55,a56,a57,a58,a59,a60,a61,a62,a63,a64 = ([] for i in range(64))
+    a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,a17,a18,a19,a20,a21,a22,a23,a24,a25,a26,a27,a28,a29,a30,a31,a32,a33,a34,
+    a35,a36,a37,a38,a39,a40,a41,a42,a43,a44,a45,a46,a47,a48,a49,a50,a51,a52,a53,a54,a55,a56,a57,a58,a59,a60,a61,a62,a63,a64 
+    = ([] for i in range(64))
     
     # Delete the rows with projectname = prj_name
     state = 'delete from table where PROJECTNAME = :PROJECTNAME'
@@ -289,17 +291,7 @@ def user_stories(prj_name):
                     bpri = str(story.BizPriority)      
                 else:
                     bpri =''
-                #if((prj_name == 'NPI Repair Enablement') or (prj_name == 'Service Delivery ART') or(prj_name == 'GSAR PEGA APPS - S2S,DRD, ARCH, FAST') or (prj_name == 'SDR12 PT Object & Static Data Migration') or (prj_name == 'SDR12 PT Foundational Services Team') or (prj_name == 'SDR12 PT Internal & External Services Team') \
-                 #    or (prj_name == 'GSLO Finance Team') or (prj_name == 'GSLO Internal & External Services Team')):
-                    
-                baname =''
-                #else:
-                 #   if(story.BusinessApplicationName):
-                 #       baname = str(story.BusinessApplicationName)  
-                  #  
-                  #  else:
-                  #      baname =''
-
+               
                 if(story.BusinessApplicationNameOld):
                     banameold = str(story.BusinessApplicationNameOld)      
                 else:
@@ -383,16 +375,38 @@ def user_stories(prj_name):
                     xfl = str(story.XFlow)      
                 else:
                     xfl =''
-                a1.append(e1),a2.append(workID),a3.append(workn),a4.append(d),a5.append(ad),a6.append(bl),a7.append(blr),a8.append(blockr),a9.append(cred),a10.append(ds),a11.append(df),a12.append(j),a13.append(expd),a14.append(fsn),a15.append(fsd),a16.append(hasp),a17.append(inpd),a18.append(it),a19.append(lbd),a20.append(lrun),a21.append(m),a22.append(milest),a23.append(notes),a24.append(owner),a25.append(pack),a26.append(prjn),a27.append(rel),a28.append(schs),a29.append(schsp),a30.append(succ),a31.append(tags),a32.append(taskat),a33.append(tasket),a34.append(taskrt),a35.append(taskst),a36.append(tas),a37.append(taskcc),a38.append(taskcs),a39.append(taskc),a40.append(accepc),a41.append(analysist),a42.append(antype),a43.append(bpri),a44.append(baname),a45.append(banameold),a46.append(busp),a47.append(busv),a48.append(bvs),a49.append(cdrm),a50.append(cfi),a51.append(ermre),a52.append(ermrn),a53.append(estdc),a54.append(otbreqpr),a55.append(proph),a56.append(procat),a57.append(proow),a58.append(qaest),a59.append(qasta),a60.append(requ),a61.append(testc),a62.append(track),a63.append(xfl)
+                a1.append(e1),a2.append(workID),a3.append(workn),a4.append(d),a5.append(ad),a6.append(bl),a7.append(blr), /
+                a8.append(blockr),a9.append(cred),a10.append(ds),a11.append(df),a12.append(j),a13.append(expd),a14.append(fsn), /
+                a15.append(fsd),a16.append(hasp),a17.append(inpd),a18.append(it),a19.append(lbd),a20.append(lrun),a21.append(m), /
+                a22.append(milest),a23.append(notes),a24.append(owner),a25.append(pack),a26.append(prjn),a27.append(rel),a28./
+                append(schs),a29.append(schsp),a30.append(succ),a31.append(tags),a32.append(taskat),a33.append(tasket),/
+                a34.append(taskrt),a35.append(taskst),a36.append(tas),a37.append(taskcc),a38.append(taskcs),a39.append(taskc),/
+                a40.append(accepc),a41.append(analysist),a42.append(antype),a43.append(bpri),a44.append(baname),a45.append(banameold),/
+                a46.append(busp),a47.append(busv),a48.append(bvs),a49.append(cdrm),a50.append(cfi),a51.append(ermre),a52.append(ermrn),/
+                a53.append(estdc),a54.append(otbreqpr),a55.append(proph),a56.append(procat),a57.append(proow),a58.append(qaest),/
+                a59.append(qasta),a60.append(requ),a61.append(testc),a62.append(track),a63.append(xfl)
                 a64.append(lastdatarefresh)
     
-    df2 = pd.DataFrame(list(zip(a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,a17,a18,a19,a20,a21,a22,a23,a24,a25,a26,a27,a28,a29,a30,a31,a32,a33,a34,a35,a36,a37,a38,a39,a40,a41,a42,a43,a44,a45,a46,a47,a48,a49,a50,a51,a52,a53,a54,a55,a56,a57,a58,a59,a60,a61,a62,a63,a64)))
+    df2 = pd.DataFrame(list(zip(a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,a17,a18,a19,a20,a21,a22,a23,a24,a25,a26,a27,a28,
+                                a29,a30,a31,a32,a33,a34,a35,a36,a37,a38,a39,a40,a41,a42,a43,a44,a45,a46,a47,a48,a49,a50,a51,a52,a53,a54,
+                                a55,a56,a57,a58,a59,a60,a61,a62,a63,a64)))
     
     row_values1= [list(x) for x in df2.values]
     
     
     try:
-        curs.executemany ("INSERT INTO rally_User_Stories (User_Story_Name,WorkspaceID,WorkspaceName,FormattedID,AcceptedDate,Blocked,BlockedReason,Blocker,CreationDate,DefectStatus,Defects,Description,Expedite,FlowState,FlowStateChangedDate,HasParent,InProgressDate,Iteration,LastBuild,LastRun,LastUpdateDate,Milestones,Notes,OwnerEmail,PackageN,ProjectName,Release,ScheduleState,ScheduleStatePrefix,Successors,Tags,TaskActualTotal,TaskEstimateTotal,TaskRemainingTotal,TaskStatus,Tasks,TestCaseCount,TestCaseStatus,TestCases,AcceptanceCriteria,AnalysisStatus,AnalysisType,BizPriority,BusinessApplicationName,BusinessApplicationNameOld,BusinessPriority,BusinessValue,BusinessValueStatement,CDRMTest,CrossFunctionalImpact,ERMOReleaseEvent,ERMOReleaseName,EstDevCompleteDate,OTBRequestPriority,ProcessPhase,ProductCategory,ProductOwner,QAEstimate,QAStatus,Requester,TestCycle,Track,XFlow,LastDataRefresh) VALUES (:1,:2,:3,:4,:5,:6,:7,:8,:9,:10,:11,:12,:13,:14,:15,:16,:17,:18,:19,:20,:21,:22,:23,:24,:25,:26,:27,:28,:29,:30,:31,:32,:33,:34,:35,:36,:37,:38,:39,:40,:41,:42,:43,:44,:45,:46,:47,:48,:49,:50,:51,:52,:53,:54,:55,:56,:57,:58,:59,:60,:61,:62,:63,:64)",row_values1)
+        curs.executemany ("INSERT INTO rally_User_Stories (User_Story_Name,WorkspaceID,WorkspaceName,FormattedID,AcceptedDate,Blocked,/
+                          BlockedReason,Blocker,CreationDate,DefectStatus,Defects,Description,Expedite,FlowState,FlowStateChangedDate,
+                          HasParent,InProgressDate,Iteration,LastBuild,LastRun,LastUpdateDate,Milestones,Notes,OwnerEmail,PackageN,
+                          ProjectName,Release,ScheduleState,ScheduleStatePrefix,Successors,Tags,TaskActualTotal,TaskEstimateTotal,
+                          TaskRemainingTotal,TaskStatus,Tasks,TestCaseCount,TestCaseStatus,TestCases,AcceptanceCriteria,AnalysisStatus,
+                          AnalysisType,BizPriority,BusinessApplicationName,BusinessApplicationNameOld,BusinessPriority,BusinessValue,
+                          BusinessValueStatement,CDRMTest,CrossFunctionalImpact,ERMOReleaseEvent,ERMOReleaseName,EstDevCompleteDate,
+                          OTBRequestPriority,ProcessPhase,ProductCategory,ProductOwner,QAEstimate,QAStatus,Requester,TestCycle,Track,
+                          XFlow,LastDataRefresh) VALUES (:1,:2,:3,:4,:5,:6,:7,:8,:9,:10,:11,:12,:13,:14,:15,:16,:17,:18,:19,:20,:21,:22,
+                                                         :23,:24,:25,:26,:27,:28,:29,:30,:31,:32,:33,:34,:35,:36,:37,:38,:39,:40,:41,:42,
+                                                         :43,:44,:45,:46,:47,:48,:49,:50,:51,:52,:53,:54,:55,:56,:57,:58,:59,:60,:61,:62,
+                                                         :63,:64)",row_values1)
         print('yes')
                
     except Exception as e:
@@ -411,7 +425,9 @@ def user_stories(prj_name):
         # if your SMTP server doesn't need authentications,
         # you don't need the following line:
         #session.login(base64.b64decode(user),base64.b64decode(password))
-        TEXT = "Hello! \n\n The incremental User Stories script with error handling ("+str(c)+")  has failed for the interval of "+str(interval)+" minutes with the following exception/error:\n\n\nERROR: "+ str(e) +". Error in ProjectName :  "+ str(prj_name) + "\n\nThis may impact the Loading of the data from Rally into Oracle.\n\n\n Regards,\n\n"
+        TEXT = "Hello! \n\n The incremental User Stories script with error handling ("+str(c)+")  has failed for the interval of 
+        "+str(interval)+" minutes with the following exception/error:\n\n\nERROR: "+ str(e) +". Error in ProjectName :  "+ str(prj_name) +
+                    "\n\nThis may impact the Loading of the data from Rally into Oracle.\n\n\n Regards,\n\n"
         message = 'Subject: {}\n\n{}'.format(SUBJECT, TEXT)
         session.sendmail(sender, recipients, message)
 
