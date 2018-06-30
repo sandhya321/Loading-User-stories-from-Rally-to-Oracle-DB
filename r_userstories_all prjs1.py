@@ -427,7 +427,7 @@ def user_stories(prj_name):
         #session.login(base64.b64decode(user),base64.b64decode(password))
         TEXT = "Hello! \n\n The incremental User Stories script with error handling ("+str(c)+")  has failed for the interval of 
         "+str(interval)+" minutes with the following exception/error:\n\n\nERROR: "+ str(e) +". Error in ProjectName :  "+ str(prj_name) +
-                    "\n\nThis may impact the Loading of the data from Rally into Oracle.\n\n\n Regards,\n\n"
+        "\n\nThis may impact the Loading of the data from Rally into Oracle.\n\n\n Regards,\n\n"
         message = 'Subject: {}\n\n{}'.format(SUBJECT, TEXT)
         session.sendmail(sender, recipients, message)
 
